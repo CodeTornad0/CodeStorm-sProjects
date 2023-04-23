@@ -1,0 +1,1 @@
+Adds a "main.py" file to all folders that do not contain one within the "Future Projects" Folder. This was created so I can easily add my projects to GitHub. GitHub requires you to have a file within a folder to add that folder.

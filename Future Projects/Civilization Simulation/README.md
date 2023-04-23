@@ -1,0 +1,1 @@
+A zero player game where you observe a civilization advance.

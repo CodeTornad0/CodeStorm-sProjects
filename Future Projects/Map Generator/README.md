@@ -1,0 +1,1 @@
+Creates a map with an x position and a y position. Allows the user to add points to that map.

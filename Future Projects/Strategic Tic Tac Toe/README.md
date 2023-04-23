@@ -1,0 +1,1 @@
+Tactical Tic Tac Toe is Tic Tac Toe, but there are nine boards with different rules on how the player can move. Look [here](https://www.coolmathgames.com/0-strategic-tic-tac-toe) to play the game and for more information.
