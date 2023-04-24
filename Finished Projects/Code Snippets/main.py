@@ -165,9 +165,8 @@ def handle_option_input(prompt: str, options: list):
         user_input = input(f"{prompt}: ")
         if user_input in options:
             return user_input
-        error_message = f"""
-            Invalid option. Please enter one of the following: {' '.join(str(i) for i in options)}
-        """.lstrip()
+        error_message = f"Invalid option. Please enter one of the following: \
+                        {', '.join(str(i) for i in options)}"
         print(error_message)
 
 
