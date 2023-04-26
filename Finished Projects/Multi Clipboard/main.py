@@ -1,8 +1,19 @@
 import sys, clipboard, json
-savedData = "clipboard.json"
+import os
+
+
+FILE_PATH = os.path.dirname(os.path.realpath(__file__))
+FILE_PATH = FILE_PATH.split("CodeStorm-sProjects")[0]
+
+
+savedData = f"{FILE_PATH}clipboard.json"
+
+
 def saveData(filepath, data):
     with open(filepath, "w") as f:
         json.dump(data, f)
+
+
 def loadData(filepath):
     try:
         with open(filepath, "r") as f:
@@ -10,6 +21,8 @@ def loadData(filepath):
             return data
     except:
         return {}
+
+
 if len(sys.argv) == 2:
     command = sys.argv[1]
     data = loadData(savedData)

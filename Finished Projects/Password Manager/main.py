@@ -1,10 +1,15 @@
 from random import sample
 
 from cryptography.fernet import Fernet
+import os
+
+
+FILE_PATH = os.path.dirname(os.path.realpath(__file__))
+FILE_PATH = FILE_PATH.split("CodeStorm-sProjects")[0]
 
 
 def LoadKey():
-    file = open("key.key", "rb")
+    file = open(f"{FILE_PATH}key.key", "rb")
     key = file.read()
     file.close()
     return key
@@ -14,7 +19,7 @@ def View():
     x = input("Enter The Master Password: ")
     if x == masterPwd:
         try:
-            with open("passwords.txt", "r") as f:
+            with open(f"{FILE_PATH}passwords.txt", "r") as f:
                 for line in f.readlines():
                     data = line.rstrip()
                     user, passwd = data.split("|")
@@ -30,7 +35,7 @@ def View():
 def Add():
     name = input("Account Name: ")
     pwd = input("Password: ")
-    with open("passwords.txt", "a") as f:
+    with open(f"{FILE_PATH}passwords.txt", "a") as f:
         f.write(f"{name}|{fer.encrypt(pwd.encode()).decode()}\n")
 
 

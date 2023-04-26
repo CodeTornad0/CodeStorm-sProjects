@@ -130,9 +130,9 @@ def run_timer(time_allocated: dict[str, int], activity: str) -> None:
 
     for seconds_left in range(total_seconds, -1, -1):
         seconds_left_low_or_high = {seconds_left > 3: 0, seconds_left < 4: 1}[True]
-        # 3 and 4 are used because they are low numbers
         # 0 gets the color for when the timer is not ending soon while 1 does the opposite
         text_color = text_colors[seconds_left_low_or_high]
+        # checks if there are only a few repeats left and changes the color to signify this change
 
         display_timer(
             text_color=text_color, activity=activity, time_allocated=time_allocated

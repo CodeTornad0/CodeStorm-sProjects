@@ -2,7 +2,7 @@ from time import sleep
 
 # !Note!
 # run file with sudo for permission to be granted
-# host path and redirect only work on macOS
+
 
 HOSTS_PATH = "/etc/hosts"
 REDIRECT = "127.0.0.1"

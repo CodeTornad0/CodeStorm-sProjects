@@ -96,10 +96,8 @@ def main():
 
     text = input("Enter the text you would like to convert: ")
 
-    if action == "1":
-        converted_text = convert_text_to_morse_code(text)
-    else:
-        converted_text = convert_morse_code_to_text(text)
+    action_map = {"1": convert_text_to_morse_code, "2": convert_morse_code_to_text}
+    converted_text = action_map[action](text)
 
     print(f"Result: {converted_text}")
 

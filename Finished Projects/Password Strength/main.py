@@ -53,8 +53,8 @@ def main() -> None:
     ]
 
     with open(
-        f"{FILE_PATH}/common_passwords.txt",  # this does not work without using FILE_PATH
-        "r",  # even though it is in the same workspace
+        f"{FILE_PATH}/common_passwords.txt",
+        "r",
         encoding="utf-8",
     ) as file:
         common_passwords = file.read().splitlines()[

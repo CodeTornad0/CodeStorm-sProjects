@@ -1,5 +1,10 @@
 import random
 import names
+import os
+
+
+FILE_PATH = os.path.dirname(os.path.realpath(__file__))
+FILE_PATH = FILE_PATH.split("CodeStorm-sProjects")[0]
 
 
 def Invalid_Input(option, category, option1, option2):
@@ -17,7 +22,7 @@ def Generate_Email():
         words = []
         brand = []
         repeats = random.randint(4, 8)
-        with open("business.txt", "r") as f:
+        with open(f"{FILE_PATH}business.txt", "r") as f:
             for line in f.readlines():
                 brand.append(line.rstrip())
         for i in range(repeats):

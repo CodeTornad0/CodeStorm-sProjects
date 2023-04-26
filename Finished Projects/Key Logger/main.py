@@ -1,11 +1,17 @@
 import keyboard
+import os
 
-with open("logs.txt", "w") as file:
+
+FILE_PATH = os.path.dirname(os.path.realpath(__file__))
+FILE_PATH = FILE_PATH.split("CodeStorm-sProjects")[0]
+
+
+with open(f"{FILE_PATH}logs.txt", "w") as file:
     file.close()
 
 
 def writer(data):
-    with open("logs.txt", "a") as file:
+    with open(f"{FILE_PATH}logs.txt", "a") as file:
         file.write(data)
 
 
