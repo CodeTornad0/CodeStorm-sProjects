@@ -1,0 +1,1 @@
+Has the user guess a secret code made of three digits of ones and zeros until they lose all their guesses or win. The user gets hints if their guess was wrong.
