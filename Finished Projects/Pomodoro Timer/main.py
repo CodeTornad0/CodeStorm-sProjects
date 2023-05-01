@@ -121,8 +121,6 @@ def run_timer(time_allocated: dict[str, int], activity: str) -> None:
     seconds = time_allocated["seconds"]
     total_seconds = hours * 3600 + minutes * 60 + seconds
 
-    activity = f"{activity.title()}ing..."  # work -> Working...
-
     text_colors: list[str] = {
         "Working...": [Color.GREEN.value, Color.ORANGE.value],
         "Resting...": [Color.BLUE.value, Color.RED.value],
@@ -208,12 +206,12 @@ def main() -> None:
 
     input("Press enter to start the timer")
 
-    run_timer(time_allocated=time_working, activity="work")
+    run_timer(time_allocated=time_working, activity="Working...")
 
     print(f"{Color.BLUE.value}Done! Break starting")
     time.sleep(1)
 
-    run_timer(time_allocated=time_resting, activity="rest")
+    run_timer(time_allocated=time_resting, activity="Resting...")
 
     print(f"{Color.GREEN.value}Break is over")
 
