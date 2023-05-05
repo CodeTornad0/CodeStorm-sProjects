@@ -2,7 +2,7 @@
 
 
 import time
-from enum import Enum
+import enum
 
 
 def return_formatting(format_code: int) -> str:
@@ -20,14 +20,14 @@ def return_formatting(format_code: int) -> str:
     return f"\x1b[{format_code}m"
 
 
-class Color(Enum):
+class Color(enum.Enum):
     """
     Summary:
         Reset text color, working colors, and resting colors in one location
         to be easily be accessed for printing text.
 
     Args:
-        Enum (class): Enum class for defining a fixed set of color options for use in terminal
+        enum.Enum (class): Enum class for defining a fixed set of color options for use in terminal
         text formatting.
     """
 
@@ -127,8 +127,8 @@ def run_timer(time_allocated: dict[str, int], activity: str) -> None:
     }[activity]
 
     for seconds_left in range(total_seconds, -1, -1):
-        seconds_left_low_or_high = {seconds_left > 3: 0, seconds_left < 4: 1}[True]
-        # 0 gets the color for when the timer is not ending soon while 1 does the opposite
+        seconds_left_low_or_high = {seconds_left > 3: 0, seconds_left <= 3: 1}[True]
+        # 0 gets the color index for when the timer is not ending soon while 1 does the opposite
         text_color = text_colors[seconds_left_low_or_high]
         # checks if there are only a few repeats left and changes the color to signify this change
 
@@ -168,8 +168,8 @@ def display_timer(
     )
 
 
-def update_time_remaining(seconds: int, minutes: int, hours: int) -> list[int]:
-    """
+def update_time_remaining(seconds: int, minutes: int, hours: int):
+     """
     Summary:
         Update the time remaining for the timer.
 
@@ -179,11 +179,11 @@ def update_time_remaining(seconds: int, minutes: int, hours: int) -> list[int]:
         hours (int): The number of hours left.
 
     Returns:
-        list[int]: A list of the seconds, minutes, and hours left.
+        tuple[int]: A tuple of the seconds, minutes, and hours left.
     """
-
+    
     seconds -= 1
-
+    
     if seconds < 0:
         seconds = 59
         minutes -= 1
@@ -192,7 +192,7 @@ def update_time_remaining(seconds: int, minutes: int, hours: int) -> list[int]:
         minutes = 59
         hours -= 1
 
-    return [seconds, minutes, hours]
+    return seconds, minutes, hours
 
 
 def main() -> None:
