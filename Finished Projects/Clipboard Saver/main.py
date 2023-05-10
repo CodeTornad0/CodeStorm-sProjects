@@ -1,4 +1,4 @@
-"""Write everything the user copies into a file, so the user never loses what they copied."""
+"""Writes everything the user copies into a file, so the user never loses what they copied."""
 
 
 import pyperclip
