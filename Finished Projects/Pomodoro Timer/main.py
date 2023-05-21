@@ -108,7 +108,7 @@ def run_timer(time_allocated: dict[str, int], activity: str) -> None:
         and updating the time left.
 
     Args:
-        time_allocated (dict[str, int, str, int, str, int]): The time for the timer to run in hours,
+        time_allocated (dict[str, int]): The time for the timer to run in hours,
         minutes, and seconds.
 
         activity (str): The activity the timer is running for.
@@ -156,7 +156,7 @@ def display_timer(
     Args:
         text_color (str): The color the text is printed in.
         activity (str): The activity the timer is running for.
-        time_allocated (dict[str, int, str, int, str, int]): The time in hours, minutes,
+        time_allocated (dict[str, int]): The time in hours, minutes,
         and seconds.
     """
 
