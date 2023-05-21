@@ -169,7 +169,7 @@ def display_timer(
 
 
 def update_time_remaining(seconds: int, minutes: int, hours: int):
-     """
+    """
     Summary:
         Update the time remaining for the timer.
 
